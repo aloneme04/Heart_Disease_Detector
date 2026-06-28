@@ -39,7 +39,7 @@ if st.button("Predict"):
             input_df[col] = 0
     input_df = input_df[expected_columns]  # Reorder columns to match expected        
     scaler_input = scaler.transform(input_df)
-    prediction = model.predict(scaler_input),[0]
+    prediction = model.predict(scaler_input)[0]
 
     if prediction == 1:
         st.error("⚠️ high risk of heart disease")
